@@ -8,8 +8,9 @@ CREATE TABLE IF NOT EXISTS sample.rank (
     PRIMARY KEY (id)
 );
 
-ALTER TABLE sample.employee ADD rank_id INTEGER;
+ALTER TABLE sample.employee ADD IF NOT EXISTS rank_id INTEGER;
 
+DELETE FROM sample.rank;
 INSERT INTO sample.rank(name, salary) VALUES('사원', 100);
 INSERT INTO sample.rank(name, salary) VALUES('대리', 150);
 INSERT INTO sample.rank(name, salary) VALUES('과장', 200);
