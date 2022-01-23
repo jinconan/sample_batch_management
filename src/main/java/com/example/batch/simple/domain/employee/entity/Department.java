@@ -1,5 +1,6 @@
-package com.example.batch.simple.entity;
+package com.example.batch.simple.domain.employee.entity;
 
+import com.example.batch.simple.domain.common.entity.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,15 +14,12 @@ import javax.persistence.Id;
 @Setter
 @Getter
 @ToString
-public class Rank  extends AbstractEntity {
-
+public class Department extends AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
 
-    private Integer salary;
-
-
+    private String location;
 }
